@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+:root {
+    --couleur-principale: #814AC2;
+    --couleur-hover: #934AC3;
+    --taille-subtitle: 32px;
+}
+
+
+/* --------------- CONTENU PRINCIPALE ---------------*/
+.Contenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #011236;
+
+    /* CERCLE BLEUE */
+    #Blue_circle {
+        position: absolute;
+        background: rgba(112, 105, 200, 0.5);
+        filter: blur(300px);
+        border-radius:50%;
+        width:800px;
+        height:800px;
+        /* relatif à un des côtés */
+        top: -300px;
+        left: -300px;
+    }
+
+    /* CERCLE ROSE */
+    #Pink_circle {
+        position: absolute;
+        background: rgba(255, 0, 123, 0.6);
+        filter: blur(300px);
+        border-radius:50%;
+        width:800px;
+        height:800px;
+        /* relatif à un des côtés */
+        top: -300px;
+        right: -300px;
+    }
+}
+/* --------------------------------------------------*/
+
+
+
+
+
+/* --------------- PARTIE CAUCHE ---------------*/
+.Left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(1, 18, 54, 0.5);
+    box-shadow: 1px 4px 1.5px #7069C8;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* ---------------------------------------------*/
+
+.Left .Contenu-Gauche {
+    height: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.Left .Titre {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+.Left .Titre h1 {
+    color: var(--couleur-principale);
+    padding-left: 5px;
+}
+
+.Left .SubTitle {
+    color: #fff;
+    font-family: "Oxanium", sans-serif;
+    font-weight: bold;
+    font-size: var(--taille-subtitle);
+    text-align: center;
+    align-items: center;
+}
+
+.Left .Input-group {
+    position: relative;
+    margin: 30px 0;
+}
+
+.Left .Input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.Left .Input-group input {
+    width: 353px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid #7069C8;
+    outline: none;
+    border-radius: 15px;
+}
+
+.Input-group input:focus~label,
+.Input-group input:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #011236;
+    color: var(--couleur-principale);
+}
+
+
+
+.Left .Remember {
+    margin: -15px 0 15px;
+}
+
+.Left .Remember label {
+    color: #fff;
+    font-size: 14px;
+}
+
+.Left .Remember label input:hover {
+    cursor: pointer;
+}
+
+.Left .Remember label input {
+    accent-color: var(--couleur-principale);
+}
+
+.Left .btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 373px;
+    height: 40px;
+    background-color: var(--couleur-principale);
+    font-size: 16px;
+    color: #fff;
+    font-weight: ExtraLight;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+.Left .Connexion {
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.Left .Connexion p {
+    color: #fff;
+}
+
+.Left .Connexion p a {
+    color: var(--couleur-principale);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.Left .Connexion p a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+
+
+/* --------------- PARTIE DROITE ---------------*/
+.Right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+
+
+    background-image: url('../../Images/Manette.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* 10% d'opacité */
+}
+/* ---------------------------------------------*/

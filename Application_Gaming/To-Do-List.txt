@@ -1,0 +1,27 @@
+Token : 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
+
+
+UserFlow Inscription utilisateur : 
+1. Informations personnelles du joueur : Prénom / Identifiant / Adresse email / Mot de passe 
+2. Plateforme utilisée (Pc, Ps, Xbox,...)
+3. Type de jeux (Action, aventure, cool,...)
+4. Profil : Localisation, Biographie, Chips selections (variables représentant le joueur pour le matchmaking)
+
+
+
+
+
+
+Fonctionnalités :
+1. Lister les réseaux sociaux des utilisateurs (Discord, Insta, Steam...)
+
+Matchmaking automatique entre utilisateurs
+Customisation des profils (changer avatar, pseudo, mdp, mail...)
+Lister les réseaux sociaux des utilisateurs (Discord, Insta, Steam...)
+Se connecter avec des réseaux sociaux
+Lister des jeux vidéos et leurs informations
+Ajouter/Supprimer des amis manuellement
+ Personnalisation du profil (centre d’intérêts, jeux favoris) 
+Connection/Déconnection utilisateur
+Recherche d’amis personnalisable (par jeux, plateformes, centres d’intérêts, par région...)
+Status de profile (en ligne, ne pas déranger, en jeu...)

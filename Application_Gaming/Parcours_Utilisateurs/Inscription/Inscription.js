@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const fd = new FormData();
       Object.entries(data).forEach(([k, v]) => fd.append(k, v));
   
-      fetch('save.php', { method: 'POST', body: fd })
+      fetch('../Save.php', { method: 'POST', body: fd })
         .then(response => response.text())               // on récupère d'abord tout en texte
         .then(text => {
           console.log('Réponse brute du serveur →', text);

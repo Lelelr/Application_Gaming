@@ -6,7 +6,9 @@
     --taille-subtitle: 32px;
 }
 
-
+* {
+    font-family: "Oxanium", sans-serif;
+}
 /* --------------- CONTENU PRINCIPALE ---------------*/
 .Contenu {
     position: absolute;
@@ -78,13 +80,39 @@
 
 
 /* ---------------  ANIMATION INSCRIPTION UTILISATEUR ---------------*/
-.form-step {
-    position: relative;
+.form-container {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
     width: 100%;
     height: 100%;
-    padding: 20px;
+    overflow: hidden;
+    /* background-color: green; */
+    text-align: center;
+    /* vertical-align: middle; */
+    /* top: 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-step {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
     box-sizing: border-box;
-  
+    /* top: 20%; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     /* au départ, toutes les étapes sont placées sous le conteneur */
     transform: translateY(100%);
     transition: transform 0.5s ease;
@@ -123,9 +151,14 @@
     align-items: center;
 }
 
+.Left .Paragraphe {
+    color: #fff;
+    font-weight: lighter;
+}
+
 .Left .Input-group {
     position: relative;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .Left .Input-group label {
@@ -221,6 +254,136 @@
     cursor: pointer;
     font-weight: 600;
 }
+
+
+
+/* --------------- SELECTION --------------- */
+select {
+    width: 373px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 70px 0 10px;       /* espace pour le texte + flèche */
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border: 1px solid #7069C8;
+    border-radius: 15px;
+    outline: none;
+}
+
+select option {
+    background-color: #011236;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 5px; 
+}
+/* ----------------------------------------- */
+
+
+
+/* --------------- CHECK BOX --------------- */
+.checkbox-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #fff;
+    user-select: none;
+  }
+  .checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #7069C8;
+    border-radius: 4px;
+    margin-right: 6px;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .checkbox-group input[type="checkbox"]:checked {
+    background: #7069C8;
+    border-color: #7069C8;
+  }
+  .checkbox-group input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+/* ----------------------------------------- */
+
+
+/* --------------- BIOGRAPHIE --------------- */
+textarea {
+    width: 373px;
+    height: 100px;
+    font-size: 16px;
+    color: #fff;
+    /* padding: 0 70px 0 10px;       espace pour le texte + flèche */
+    background-color: transparent;
+    /* background-repeat: no-repeat;
+    background-position: right 10px center; */
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #7069C8;
+    border-radius: 15px;
+    outline: none;
+}
+/* ------------------------------------------ */
+
+
+
+
+
+
+
+/* --------------- ETAPES DE CONNEXION --------------- */
+.Left .Etape-connexion {
+    position: relative;
+    margin-top: 30px;
+    width: 320px;
+    height: 40px;
+    /* border: 1px solid red;
+    border-radius: 15px; */
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Etape-connexion .Etape-valide {
+    border: 1px solid #7069C8;
+    background-color: #7069C8;
+    border-radius: 20px;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.Etape-connexion .Etape-non-valide {
+    border: 1px solid #7069C8;
+    border-radius: 20px;
+    padding: 0 20px;
+    color: #fff;
+}
+/* --------------------------------------------------- */
+
+
+
+
+
 
 
 

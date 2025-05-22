@@ -7,7 +7,11 @@ UserFlow Inscription utilisateur :
 3. Type de jeux (Action, aventure, cool,...)
 4. Profil : Localisation, Biographie, Chips selections (variables représentant le joueur pour le matchmaking)
 
-
+1. Identité : Prenom, email
+2. En savoir plus : Localisation, Biographie, variables loisirs
+3. Matériel : Plateforme utilisé, type de jeux
+4. Réseaux sociaux : Instagram, Snapchat, X (twitter)
+5. Identifiant, Mot de passe
 
 
 

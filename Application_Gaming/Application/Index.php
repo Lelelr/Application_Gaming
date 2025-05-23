@@ -6,7 +6,9 @@
     <!-- Import BoxIcons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Import CSS -->
-    <link rel="stylesheet" href="Accueil.css">
+    <link rel="stylesheet" href="Index.css">
+    <!-- CSS spécifique à chaque page -->
+    <link id="page-css" rel="stylesheet" href="css/Index.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -186,7 +188,7 @@
 <main class="content">
 
     <!-- Accueil -->
-    <div id="Accueil" class="tab-content active">
+    <div id="Accueil" class="tab-content ">
         <h2>Accueil</h2>
         <p>Voici la page d'accueil.</p>
     </div>
@@ -254,16 +256,31 @@
 
 
     document.addEventListener('DOMContentLoaded', () => {
-      const tabs = document.querySelectorAll('.side-menu a');
-      const content = document.getElementById('content');
+        const tabs = document.querySelectorAll('.side-menu a');
+        const content = document.getElementById('content');
 
-      if (!content) {
-        console.error('Élément #content introuvable');
+        const pageCss = document.getElementById('page-css');
+
+        if (!content || !pageCss) {
+        console.error('Élément #content ou #page-css introuvable');
         return;
       }
 
-      // Fonction pour charger un fragment PHP
-      function loadPage(page) {
+        if (!content) {
+            console.error('Élément #content introuvable');
+            return;
+        }
+
+        function loadPage(page) {
+
+        // Mettre à jour le CSS spécifique
+        const cssPath = `css/${page}.css`;
+        const bust = Date.now();
+        pageCss.href = `${cssPath}?ts=${bust}`;
+        pageCss.onerror = () => console.error(`Échec du chargement CSS: ${cssPath}`);
+
+
+        // 2) Contenu PHP
         fetch(`Pages/${page}.php`)
           .then(response => {
             if (!response.ok) throw new Error('Erreur de chargement');
@@ -278,7 +295,7 @@
           });
       }
 
-    //   // Initialisation : charger la page 'home'
+    //   // Initialisation : charger la page 'Accueil'
     //   loadPage('Accueil');
 
       tabs.forEach(link => {
@@ -289,7 +306,7 @@
           // Mettre à jour la classe active
           tabs.forEach(l => l.classList.toggle('active', l === link));
 
-          // Charger le contenu PHP
+          // Charger le contenu PHP et CSS
           loadPage(page);
         });
       });

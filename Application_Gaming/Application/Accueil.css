@@ -207,7 +207,7 @@ height: 100%;
 
 
 
-#sidebar .side-menu.top li.active a {
+#sidebar .side-menu li.active a {
 	color: #fff;
     background: var(--couleur-principale);
 }
@@ -238,3 +238,19 @@ height: 100%;
     height: 100%;
     width: calc(100% - 260px);
 }
+
+
+
+
+
+
+.content {
+    flex: 1;
+    padding: 1rem;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }

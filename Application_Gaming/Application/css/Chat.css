@@ -1,11 +1,15 @@
+/* --------------- PARTIE GAUCHE : CONTACT --------------- */
+
 .Container .Contact {
     position: absolute;
-    top: 0;
+    top: 5%;
     left: 0;
     width: 25%;
-    height: 100%;
+    height: 95%;
+    border-radius: 20px;
     color: white;
-    background-color: blue;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
 }
 
 .Container .Contact p {
@@ -13,21 +17,52 @@
     text-align: center;
     
 }
+/* ------------------------------------------------------- */
+
+
+
+
+
+/* --------------- PARTIE CENTRE : ZONE DE DISCUSSION --------------- */
 
 .Container .Discussion {
     position: absolute;
-    top: 0;
-    left: 25%;
-    width: 55%;
-    height: 100%;
-    background-color: white;
+    top: 1%;
+    left: 27%;
+    width: 51%;
+    height: 99%;
+    border-radius: 20px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
 }
 
-.Container .Informations {
+.Discussion .Informations-contact {
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    border-radius: 20px 20px 0px 0px;
+    border-bottom: 1px solid #7069C8;
+    /* background-color: red; */
+}
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+/* --------------- PARTIE DROITE : ZONE D'INFORMATIONS --------------- */
+.Container .Informations {
+    position: absolute;
+    top: 5%;
     right: 0;
     width: 20%;
-    height: 100%;
-    background-color: red;
+    height: 95%;
+    border-radius: 20px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
 }
+/* ------------------------------------------------------------------- */

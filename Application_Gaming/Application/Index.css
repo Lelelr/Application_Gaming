@@ -233,10 +233,10 @@ height: 100%;
 .Contenu .Container {
     position: absolute;
     color: #fff;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: calc(100% - 260px);
+    top: 5%;
+    right: 30px;
+    height: 92%;
+    width: calc(100% - 320px);
 }
 
 

@@ -29,3 +29,8 @@ Ajouter/Supprimer des amis manuellement
 Connection/Déconnection utilisateur
 Recherche d’amis personnalisable (par jeux, plateformes, centres d’intérêts, par région...)
 Status de profile (en ligne, ne pas déranger, en jeu...)
+
+
+
+
+/!\ 3% d'éspacement entre chaques bulle

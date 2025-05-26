@@ -6,16 +6,23 @@
     <title>Chat</title>
 </head>
 <body>
-    <h2>Chat</h2>
-    <p>C'est la page "CHAT"</p>
-
-
+    <!--------------- PARTIE GAUCHE : CONTACT --------------->
     <div class="Contact">
-        <p>John</p>
-        <p>jean</p>
-        <p>Gilbert</p>
+
     </div>
-    <div class="Discussion"></div>
-    <div class="Informations"></div>
+
+
+    <!------------- PARTIE CENTRE : DISCUSSIONN ------------->
+    <div class="Discussion">
+        <div class="Informations-contact"></div>
+        <div class="Zone-message"></div>
+        <div class="Zone-text"></div>
+    </div>
+
+
+    <!------------- PARTIE DROITE : INFORMATIONS ------------>
+    <div class="Informations">
+
+    </div>
 </body>
 </html>

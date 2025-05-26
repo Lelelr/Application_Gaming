@@ -1,0 +1,84 @@
+.Container h2 {
+    /* background-color: aqua; */
+}
+
+/* --------------- TROUVES TES AMIS --------------- */
+.Container .Trouves-tes-amis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 72%;
+    height: 37%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.Trouves-tes-amis h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */
+
+
+/* ----------------- SUGGESTIONS ------------------ */
+.Container .Suggestions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.Suggestions h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------- EN LIGNE ------------------- */
+
+.Container .En-ligne {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 27%;
+    height: 60%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.En-ligne h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------- MES AMIS ------------------- */
+
+.Container .Mes-amis {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 42%;
+    height: 60%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.Mes-amis h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */

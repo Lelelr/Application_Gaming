@@ -6,7 +6,19 @@
     <title>Amis</title>
 </head>
 <body>
-    <h2>Amis</h2>
-    <p>C'est la page "Amis"</p>
+
+    <div class="Trouves-tes-amis">
+        <h2>Trouves tes amis !</h2>
+    </div>
+    <div class="Suggestions">
+        <h2>Suggestions</h2>
+    </div>
+    <div class="En-ligne">
+        <h2>En ligne</h2>
+    </div>
+    <div class="Mes-amis">
+        <h2>Mes amis</h2>
+    </div>
+
 </body>
 </html>

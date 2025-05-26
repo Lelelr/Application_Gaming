@@ -180,7 +180,7 @@
 <div class="Container">
 
   <!-- Zone où le contenu PHP sera chargé dynamiquement -->
-  <!-- Vérifie bien que cette balise existe dans index.php -->
+
   <main class="content" id="content">
     Chargement...
   </main>

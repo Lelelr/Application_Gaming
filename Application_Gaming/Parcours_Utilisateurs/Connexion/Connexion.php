@@ -1,3 +1,54 @@
+<?php
+session_start();
+// var_dump($_SERVER['REQUEST_METHOD'], $_POST);
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Récupération et validation basique
+    $identifiant = trim($_POST['identifiant'] ?? '');
+    $mdp = $_POST['mdp'] ?? '';
+
+    if ($identifiant === '' || $mdp === '') {
+        $error = 'Veuillez renseigner tous les champs.';
+    } else {
+        // Connexion à la BDD
+        try {
+        $db = new PDO('mysql:host=localhost;dbname=Application_Gaming;charset=utf8', 'leandre', 'leandre.mdp');
+
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die('Erreur de connexion BDD : ' . $e->getMessage());
+        }
+
+
+        // On sélectionne l’utilisateur et son mot de passe hashé
+        $stmt = $db->prepare("SELECT ID, IDENTIFIANT, MDP FROM USERS WHERE IDENTIFIANT =:identifiant");
+
+        $stmt->execute(['identifiant' => $identifiant]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Vérification : est-ce que l’utilisateur existe ET le mot de passe correspond au hash ?
+        if ($user && password_verify($mdp, $user['MDP'])) {
+
+            // Authentification réussie : on stocke en session
+            $_SESSION['user_id'] = $user['ID'];
+            $_SESSION['identifiant'] = $user['IDENTIFIANT'];
+
+            // Redirection vers la page principale
+            header('Location: ../../Application/Index.php');
+            exit;
+        } else {
+            $error = 'Identifiant ou mot de passe incorrect.';
+        }
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,30 +86,41 @@
                     <h2>Content de vous revoir !</h2>
                 </div>
 
-                <!-- Identifiants -->
-                <div class="Input-group">
-                    <input type="text" required>
-                    <label for="">Identifiant</label>
-                </div>
+                <form method="POST" action="">
 
-                <!-- Mot de passe -->
-                <div class="Input-group">
-                    <input type="password" required>
-                    <label for="">Mot de passe</label>
-                </div>
+                    <!-- Identifiants -->
+                    <div class="Input-group">
+                        <input type="text" id="identifiant" name="identifiant" required>
+                        <label for="identifiant">Identifiant</label>
+                    </div>
 
-                <!-- Se souvenir de moi -->
-                <div class="Remember">
-                    <a href="#">Mot de passe oublié ?</a>
-                </div>
+                    <!-- Mot de passe -->
+                    <div class="Input-group">
+                        <input type="password" id="mdp" name="mdp" required>
+                        <label for="mdp">Mot de passe</label>
+                    </div>
 
-                <!-- Boutton Connexion -->
-                <Button type="submit" class="btn">Connexion</button>
+                    <!-- Se souvenir de moi -->
+                    <div class="Remember">
+                        <a href="#">Mot de passe oublié ?</a>
+                    </div>
 
-                <!-- Pas de compte -->
-                <div class="Connexion">
-                    <p>Vous n'avez pas de compte ? <a href="../Inscription/Inscription.php" class"creer-un-compte>Créer un compte</a></p>
-                </div>
+                    <!-- Boutton Connexion -->
+                    <Button type="submit" class="btn">Connexion</button>
+
+                    <!-- Pas de compte -->
+                    <div class="Connexion">
+                        <p>Vous n'avez pas de compte ? <a href="../Inscription/Inscription.php" class"creer-un-compte>Créer un compte</a></p>
+                    </div>
+                </form>
+
+                <!-- Message d'erreur -->
+                <?php if ($error): ?>
+                    <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+                <?php endif; ?>
+
+
+                
 
             </div>
             

@@ -1,3 +1,17 @@
+<!-- Index.php -->
+
+<?php
+session_start();
+// Si pas connecté, retour vers connexion.php
+if (empty($_SESSION['user_id'])) {
+    header('Location: ../Parcours_Utilisateurs/Connexion/Connexion.php');
+    exit;
+}
+?>
+
+<!--------------->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,12 +178,18 @@
 			</li>
 
             <!-- Déconnexion -->
-			<li>
-				<a href="#" class="logout">
-					<i class='bx  bx-log-out' ></i>
-					<span class="text">Déconnexion</span>
-				</a>
-			</li>
+            <form method="POST" action="Deconnexion.php">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx  bx-log-out' ></i>
+                    <span class="text">Déconnexion</span>
+
+                </a>
+            </li>
+            
+            <form method="POST" action="Deconnexion.php">
+                <button type="submit">Déconnexion</button>
+            </form>
 		</ul>
 	</section>
 </div>
@@ -182,89 +202,72 @@
   <!-- Zone où le contenu PHP sera chargé dynamiquement -->
 
   <main class="content" id="content">
-    Chargement...
+    <h1>Bienvenue, <?= htmlspecialchars($_SESSION['identifiant']) ?> !</h1>
+    <!-- Le contenu des pages sera injecté ici -->
   </main>
 
-<main class="content">
+    <!-- <main class="content"> -->
 
-    <!-- Accueil -->
-    <div id="Accueil" class="tab-content ">
-        <h2>Accueil</h2>
-        <p>Voici la page d'accueil.</p>
-    </div>
+        <!-- Accueil -->
+        <!-- <div id="Accueil" class="tab-content ">
+            <h2>Accueil</h2>
+            <p>Voici la page d'accueil.</p>
+        </div> -->
 
-    <!-- Chat -->
-    <div id="Chat" class="tab-content">
-        <h2>Chat</h2>
-        <p>Voici la page de chat.</p>
-    </div>
+        <!-- Chat -->
+        <!-- <div id="Chat" class="tab-content">
+            <h2>Chat</h2>
+            <p>Voici la page de chat.</p>
+        </div> -->
 
-    <!-- Amis -->
-    <div id="Amis" class="tab-content">
-        <h2>Amis</h2>
-        <p>Voici la page d'amis.</p>
-    </div>
+        <!-- Amis -->
+        <!-- <div id="Amis" class="tab-content">
+            <h2>Amis</h2>
+            <p>Voici la page d'amis.</p>
+        </div> -->
 
-    <!-- Jeux -->
-    <div id="Jeux" class="tab-content">
-        <h2>Jeux</h2>
-        <p>Voici la page de jeux.</p>
-    </div>
+        <!-- Jeux -->
+        <!-- <div id="Jeux" class="tab-content">
+            <h2>Jeux</h2>
+            <p>Voici la page de jeux.</p>
+        </div> -->
 
-    <!-- Ebenements -->
-    <div id="Evenements" class="tab-content">
-        <h2>Evenements</h2>
-        <p>Voici la page d'événements.</p>
-    </div>
+        <!-- Ebenements -->
+        <!-- <div id="Evenements" class="tab-content">
+            <h2>Evenements</h2>
+            <p>Voici la page d'événements.</p>
+        </div> -->
 
-    <!-- Live -->
-    <div id="Live" class="tab-content">
-        <h2>Live</h2>
-        <p>Voici la page de live.</p>
-    </div>
+        <!-- Live -->
+        <!-- <div id="Live" class="tab-content">
+            <h2>Live</h2>
+            <p>Voici la page de live.</p>
+        </div> -->
 
-    <!-- Paramètres -->
-    <div id="Parametres" class="tab-content">
-        <h2>Paramètres</h2>
-        <p>Voici la page de paramètres.</p>
-    </div>
-    
-</main>
+        <!-- Paramètres -->
+        <!-- <div id="Parametres" class="tab-content">
+            <h2>Paramètres</h2>
+            <p>Voici la page de paramètres.</p>
+        </div> -->
+        
+    <!-- </main> -->
 
-  <!-- Script de gestion des onglets -->
+
+
+
+
+  <!-- Script de gestion des onglets : pages et css -->
   <script>
-    // On récupère tous les liens et toutes les sections
-    // const tabs = document.querySelectorAll('.side-menu a');
-    // const panes = document.querySelectorAll('.tab-content');
-
-    // tabs.forEach(link => {
-    //   link.addEventListener('click', event => {
-    //     event.preventDefault(); // Empêche le comportement par défaut du lien
-    //     const target = link.dataset.tab; // ex: "chat"
-
-        // 1) Mettre à jour la classe 'active' sur les liens
-        // tabs.forEach(l => l.classList.toggle('active', l === link));
-
-        // 2) Afficher / masquer les sections de contenu
-    //     panes.forEach(pane => {
-    //       pane.classList.toggle('active', pane.id === target);
-    //     });
-    //   });
-    // });
-    //-----------------------------------------------------------------------------------
-
-
 
     document.addEventListener('DOMContentLoaded', () => {
         const tabs = document.querySelectorAll('.side-menu a');
         const content = document.getElementById('content');
-
         const pageCss = document.getElementById('page-css');
 
         if (!content || !pageCss) {
         console.error('Élément #content ou #page-css introuvable');
         return;
-      }
+        }
 
         if (!content) {
             console.error('Élément #content introuvable');
@@ -272,45 +275,91 @@
         }
 
         function loadPage(page) {
+            // Mettre à jour le CSS spécifique
+            const cssPath = `css/${page}.css`;
+            const bust = Date.now();
+            pageCss.href = `${cssPath}?ts=${bust}`;
+            pageCss.onerror = () => console.error(`Échec du chargement CSS: ${cssPath}`);
 
-        // Mettre à jour le CSS spécifique
-        const cssPath = `css/${page}.css`;
-        const bust = Date.now();
-        pageCss.href = `${cssPath}?ts=${bust}`;
-        pageCss.onerror = () => console.error(`Échec du chargement CSS: ${cssPath}`);
+
+            // 2) Charger le contenu PHP
+            // fetch(`Pages/${page}.php`)
+            // .then(response => {
+            //     if (!response.ok) throw new Error('Erreur de chargement');
+            //     return response.text();
+            // })
+            // .then(html => {
+            //     content.innerHTML = html;
+            // })
+            // .catch(err => {
+            // content.innerHTML = `
+            //     <p>Impossible de charger la page "${page}".</p>
+            //     <pre>${err.message}</pre>
+            // `;
+            // console.error('Détail de l’erreur :', err);
+            // });
 
 
-        // 2) Contenu PHP
-        fetch(`Pages/${page}.php`)
-          .then(response => {
-            if (!response.ok) throw new Error('Erreur de chargement');
-            return response.text();
-          })
-          .then(html => {
-            content.innerHTML = html;
-          })
-          .catch(err => {
-            content.innerHTML = `<p>Impossible de charger la page "${page}".</p>`;
-            console.error(err);
-          });
-      }
 
-    //   // Initialisation : charger la page 'Accueil'
-    //   loadPage('Accueil');
+            const phpPath = `Pages/${page}.php`;
+            console.log(`Tentative de chargement : ${phpPath}`);
+            fetch(phpPath)
+            .then(response => {
+                console.log(`Réponse (${response.status}):`, response);
+                if (!response.ok) throw new Error(`Status ${response.status} - ${response.statusText}`);
+                return response.text();
+            })
+            .then(html => {
+                content.innerHTML = html;
+            })
+            .catch(err => {
+                content.innerHTML = `
+                <p>Impossible de charger la page "${page}".</p>
+                <pre>${err.message}</pre>
+                `;
+                console.error('Détail de l’erreur :', err);
+            });
+        }
 
-      tabs.forEach(link => {
-        link.addEventListener('click', event => {
-          event.preventDefault();
-          const page = link.dataset.tab;
+        // Gestion des clicks sur la nav principale
+        tabs.forEach(link => {
+            link.addEventListener('click', event => {
+            event.preventDefault();
+            const page = link.dataset.tab;
 
-          // Mettre à jour la classe active
-          tabs.forEach(l => l.classList.toggle('active', l === link));
+            // Mettre à jour la classe active
+            tabs.forEach(l => l.classList.toggle('active', l === link));
 
-          // Charger le contenu PHP et CSS
-          loadPage(page);
+            // Charger le contenu PHP et CSS
+            loadPage(page);
+            });
         });
-      });
+
+
+
+        // Boutons internes dans #content
+        content.addEventListener('click', event => {
+            //Rrcupère l'attribut data-tab du bouton/lien cliqué
+            const target = event.target;
+            const subPage = target.dataset.tab;
+            if (!subPage) return;        // rien à faire si pas de data-tab
+            event.preventDefault();      // on empêche l'éventuel href
+
+            // Retirer l'active des navs
+            tabs.forEach(l => l.classList.remove('active'));
+
+            // Charger la "sous-page"
+            loadPage(subPage);
+        });
+
+
+
     });
+
+
+
+
+
   </script>
 
 

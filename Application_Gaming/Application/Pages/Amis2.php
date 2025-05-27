@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amis</title>
+    <title>Amis 2</title>
 </head>
 <body>
 
     <!-- Trouves tes amis -->
     <div class="Trouves-tes-amis">
-        <h2>Trouves tes amis !</h2>
-        <button id="btn-amis-v2" data-tab="amis2">Voir la version 2 des Amis</button>
+        <h2>Trouves tes amis version 2 !</h2>
+        <button id="btn-amis-v1" data-tab="amis">Retour à la version 1</button>
+        </button>
     </div>
 
     <!-- Suggestions -->
@@ -27,6 +28,15 @@
     <div class="Mes-amis">
         <h2>Mes amis</h2>
     </div>
+
+
+    <script>
+        // délégation pour revenir
+        $("#content").on("click", "#btn-amis-v1", function(){
+        // on réutilise loadPage défini dans index
+        loadPage("amis");
+        });
+    </script>
 
 </body>
 </html>

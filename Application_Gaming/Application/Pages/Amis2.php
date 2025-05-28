@@ -7,27 +7,71 @@
 </head>
 <body>
 
-    <!-- Trouves tes amis -->
-    <div class="Trouves-tes-amis">
-        <h2>Trouves tes amis version 2 !</h2>
-        <button id="btn-amis-v1" data-tab="amis">Retour à la version 1</button>
+    <!-- Retour -->
+    <!-- <div class="Retour">
+        <h2>Retour</h2>
+        <button id="btn-amis-v1" data-tab="Amis">Retour à la version 1</button>
+    </div> -->
+
+    <!-- Affichage -->
+    <div class="Affichage">
+        <div class="Gauche">
+
+            <!-- Effet -->
+            <div class="Effet"></div>
+
+            <!-- Partie du Haut -->
+            <div class="Haut"></div>
+
+            <!-- Partie du Bas -->
+            <div class="Bas">
+                <div class="Bordure"></div>
+                <!-- Boutton Demander -->
+                <Button type="submit" class="btn-Demander">Demander</button>
+
+                <!-- Boutton Ignorer -->
+                <Button type="submit" class="btn-Ignorer">Ignorer</button>
+            </div>
+        </div>
+        
+
+
+
+        <div class="Droite">
+            <div class="Premiere-partie">
+                <h2>Identifiant</h2>
+                <div class="Age"></div>
+            </div>
+
+            <div class="Deuxieme-partie"></div>
+
+            <div class="Troisieme-partie">
+                <p>Biographie</p>
+            </div>
+
+            <div class="Bordure"></div>
+
+
+            <div class="Quatrieme-partie"></div>
+
+        </div>
+    </div>
+
+    <!-- Rechercher un amis -->
+    <div class="Rechercher-un-amis">
+        <h2>Rechercher un amis !</h2>
+
         </button>
     </div>
 
-    <!-- Suggestions -->
-    <div class="Suggestions">
-        <h2>Suggestions</h2>
+    <!-- Filtres -->
+    <div class="Filtres">
+        <h2>Filtres</h2>
     </div>
 
-    <!-- En ligne -->
-    <div class="En-ligne">
-        <h2>En ligne</h2>
-    </div>
 
-    <!-- Mes amis -->
-    <div class="Mes-amis">
-        <h2>Mes amis</h2>
-    </div>
+
+
 
 
     <script>

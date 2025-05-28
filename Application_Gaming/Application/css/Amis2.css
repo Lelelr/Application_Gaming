@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+:root {
+    --couleur-principale: #814AC2;
+    --couleur-hover: #934AC3;
+    --taille-subtitle: 32px;
+}
+
+
+
+
+
+.Container h2 {
+    /* background-color: aqua; */
+}
+
+/* -------------- RECHERCHER UN AMIS -------------- */
+.Container .Rechercher-un-amis {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 20%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.Rechercher-un-amis h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------- FILTRES -------------------- */
+.Container .Filtres {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    height: 77%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.Filtres h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------- RETOUR --------------------- */
+
+.Container .Retour {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 27%;
+    height: 60%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+
+.Retour h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------ AFFICHAGE ------------------- */
+
+.Container .Affichage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 72%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #7069C8;
+}
+/* ----- AFFICHAGE GAUCHE ----- */
+.Affichage .Gauche {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    background-color: rgba(112, 105, 200, 1);
+
+}
+
+/* Effet */
+.Affichage .Gauche .Effet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    background-image: url('../../Images/Effet_carre.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* 10% d'opacité */
+}
+
+/* ----- AFFICHAGE GAUCHE HAUT ----- */
+.Affichage .Gauche .Haut {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+}
+
+
+/* ----- AFFICHAGE GAUCHE BAS ----- */
+.Affichage .Gauche .Bas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bordure */
+.Affichage .Gauche .Bas .Bordure {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+}
+
+/* Bouton "Demander" */
+.Gauche .Bas .btn-Demander {
+    position: relative;
+    top: 0;
+    left: 0;
+    /* width: 373px; */
+    width: 80%;
+    /* height: 50px; */
+    height: 13%;
+    background-color: var(--couleur-principale);
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    margin-bottom: 5%;
+    /* Ombre */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);} /* Ombre */
+
+/* Bouton "Ignorer" */
+.Gauche .Bas .btn-Ignorer {
+    position: relative;
+    top: 0;
+    left: 0;
+    /* width: 333px; */
+    width: 73%;
+    /* height: 45px; */
+    height: 12%;
+    background-color: var(--couleur-principale);
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4); /* Ombre */
+}
+.Gauche .Bas button:hover {
+    transform: scale(1.02);
+    background-color: var(--couleur-hover);
+    cursor: pointer;
+}
+/* ---------------------------- */
+
+
+
+
+/* ----- AFFICHAGE DROITE ----- */
+.Affichage .Droite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+}
+
+/* Première partie */
+.Affichage .Droite .Premiere-partie {
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    border-radius: 0px 20px 0px 0px;
+
+}
+
+/* Deuxième partie */
+.Droite .Deuxieme-partie {
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+}
+
+/* Troisième partie */
+.Droite .Troisieme-partie {
+    background-color: red;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+}
+
+/* Bordure */
+.Droite .Bordure {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    width: 40%;
+    height: 1px;
+    background-color: #fff;
+}
+
+/* Quatrième partie */
+.Droite .Quatrieme-partie {
+    background-color: green;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    border-radius: 0px 0px 20px 0px;
+}
+
+/* ---------------------------- */
+
+
+
+
+.Affichage h2 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+/* ----------------------------------------------- */

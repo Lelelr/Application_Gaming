@@ -10,7 +10,7 @@
     <!-- Trouves tes amis -->
     <div class="Trouves-tes-amis">
         <h2>Trouves tes amis !</h2>
-        <button id="btn-amis-v2" data-tab="amis2">Voir la version 2 des Amis</button>
+        <button id="btn-amis-v2" data-tab="Amis2">Voir la version 2 des Amis</button>
     </div>
 
     <!-- Suggestions -->

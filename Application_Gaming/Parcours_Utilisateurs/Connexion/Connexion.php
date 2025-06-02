@@ -24,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         // On sélectionne l’utilisateur et son mot de passe hashé
-        $stmt = $db->prepare("SELECT ID, IDENTIFIANT, MDP FROM USERS WHERE IDENTIFIANT =:identifiant");
+        $stmt = $db->prepare("SELECT ID, PRENOM, EMAIL, MDP, TYPE_DE_JEUX, PLATEFORME, GENRE, AGE, 
+        LOISIRS, LOCALISATION, BIOGRAPHIE, CREATED_AT, IDENTIFIANT, HOBBIES, PHOTO_PROFIL FROM USERS WHERE IDENTIFIANT =:identifiant");
 
         $stmt->execute(['identifiant' => $identifiant]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -33,8 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($mdp, $user['MDP'])) {
 
             // Authentification réussie : on stocke en session
-            $_SESSION['user_id'] = $user['ID'];
-            $_SESSION['identifiant'] = $user['IDENTIFIANT'];
+            $_SESSION['user_id']      = $user['ID'];
+            $_SESSION['prenom']       = $user['PRENOM'];
+            $_SESSION['email']        = $user['EMAIL'];
+            $_SESSION['mdp']          = $user['MDP'];
+            $_SESSION['type_de_jeux'] = $user['TYPE_DE_JEUX'];
+            $_SESSION['plateforme']   = $user['PLATEFORME'];
+            $_SESSION['genre']        = $user['GENRE'];
+            $_SESSION['age']          = $user['AGE'];
+            $_SESSION['loisirs']      = $user['LOISIRS'];
+            $_SESSION['localisation'] = $user['LOCALISATION'];
+            $_SESSION['biographie']   = $user['BIOGRAPHIE'];
+            $_SESSION['created_at']   = $user['CREATED_AT'];
+            $_SESSION['identifiant']  = $user['IDENTIFIANT'];
+            $_SESSION['hobbies']      = $user['HOBBIES'];
+            $_SESSION['photo_profil'] = $user['PHOTO_PROFIL'];
+
 
             // Redirection vers la page principale
             header('Location: ../../Application/Index.php');

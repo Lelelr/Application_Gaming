@@ -9,6 +9,10 @@ if (empty($_SESSION['user_id'])) {
 }
 ?>
 
+<pre>
+    <?php print_r ($_SESSION); ?>
+</pre>
+
 <!--------------->
 
 
@@ -204,6 +208,10 @@ if (empty($_SESSION['user_id'])) {
   <main class="content" id="content">
     <h1>Bienvenue, <?= htmlspecialchars($_SESSION['identifiant']) ?> !</h1>
     <!-- Le contenu des pages sera injecté ici -->
+
+    <pre>
+        <?php print_r ($_SESSION); ?>
+    </pre>
   </main>
 
     <!-- <main class="content"> -->
@@ -280,25 +288,6 @@ if (empty($_SESSION['user_id'])) {
             const bust = Date.now();
             pageCss.href = `${cssPath}?ts=${bust}`;
             pageCss.onerror = () => console.error(`Échec du chargement CSS: ${cssPath}`);
-
-
-            // 2) Charger le contenu PHP
-            // fetch(`Pages/${page}.php`)
-            // .then(response => {
-            //     if (!response.ok) throw new Error('Erreur de chargement');
-            //     return response.text();
-            // })
-            // .then(html => {
-            //     content.innerHTML = html;
-            // })
-            // .catch(err => {
-            // content.innerHTML = `
-            //     <p>Impossible de charger la page "${page}".</p>
-            //     <pre>${err.message}</pre>
-            // `;
-            // console.error('Détail de l’erreur :', err);
-            // });
-
 
 
             const phpPath = `Pages/${page}.php`;

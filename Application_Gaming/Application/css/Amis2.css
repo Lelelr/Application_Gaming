@@ -210,7 +210,7 @@
 
 /* Première partie */
 .Affichage .Droite .Premiere-partie {
-    background-color: blue;
+    /* background-color: blue; */
     position: absolute;
     top: 0;
     left: 0;
@@ -222,7 +222,7 @@
 
 /* Deuxième partie */
 .Droite .Deuxieme-partie {
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     top: 10%;
     left: 0;
@@ -232,7 +232,7 @@
 
 /* Troisième partie */
 .Droite .Troisieme-partie {
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     top: 30%;
     left: 0;
@@ -252,7 +252,7 @@
 
 /* Quatrième partie */
 .Droite .Quatrieme-partie {
-    background-color: green;
+    /* background-color: green; */
     position: absolute;
     top: 60%;
     left: 0;

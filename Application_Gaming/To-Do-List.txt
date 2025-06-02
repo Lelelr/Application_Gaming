@@ -34,3 +34,17 @@ Status de profile (en ligne, ne pas déranger, en jeu...)
 
 
 /!\ 3% d'éspacement entre chaques bulle
+/!\ OUVRIR LA SESSION : SESSION START EN HAUT DE CHAQUES FICHIER PHP !!!!!!!!!!!!!
+
+
+Afficher les informations dans la session
+        <pre>
+            <?php print_r ($_SESSION); ?>
+        </pre>
+
+
+
+
+
+Choses faites : 
+- Session sécurisée (Impossible d'arriver sur la session sans se connecter)
